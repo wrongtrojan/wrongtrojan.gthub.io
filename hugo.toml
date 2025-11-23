@@ -1,0 +1,34 @@
+baseURL = "https://wrongtrojan.github.io/"
+languageCode = "zh-cn"
+title = "一个分享学习笔记的网站"
+theme = "ananke"
+
+# 主题特定配置
+[params]
+  description = "Welcome to this website"
+  # 确保主题显示分类
+  showCategories = true
+  # 分类页面相关设置
+  taxonomyCloud = true
+  showTaxonomyCount = true
+  
+
+# 仅启用分类（禁用标签）
+[taxonomies]
+  category = "categories"
+  tag=""
+
+# 基础分页设置
+paginate = 10
+
+# 菜单配置
+[menu]
+  [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 2
