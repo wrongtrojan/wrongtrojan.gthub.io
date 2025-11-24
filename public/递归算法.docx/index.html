@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>一个分享学习笔记的网站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="递归算法
+基本法则
+基准情形
+
+有某些基准的情形，不需要递归就能求解
+不断推进
+递归调用总能朝着产生基准情形的方向推进
+设计法则
+假设所有递归调用都能运行，不必知道簿记管理的细节
+
+合成效益法则
+
+求解一个问题的同一实例，切勿在不同递归调用做重复性工作
+
+书写方式（准确性待商榷）
+确定递归的基准情形（也即递推的尽头和回归的开始）
+将问题分解为低一规模问题（找到演进方式）
+假设函数能实现低一规模问题，调用函数解决高规模问题
+复杂的递归问题
+汉诺塔
+借助终点柱，将高度为height-1的一叠盘子移到中间柱子
+将最后一个盘子移到终点柱子
+借助起点柱子将高度为height-1的一叠盘子从中间柱子移到终点柱子
+
+探索迷宫
+DFS（深度优先）
+起始位置开始首先向北移动一格，在新位置递归重复
+第一步向北行不通，尝试向南移动一格，递归重复
+向南也行不通，就尝试向西移动一格，递归重复
+如果向北、南、西都不行，就尝试向东移动一格，递归重复
+四个方向都不行，意味没有出路
+（为避免陷入循环，已经探索过的位置不再探索）
+
+找零问题
+
+贪婪算法
+尽可能用面值大的硬币
+递归算法
+基准情形：找的零钱金额与硬币面值相同，只需要1枚硬币
+不断推进：减去1枚硬币后比较大小选择
+记忆化
+基础的递归算法有大量重复性计算与法则第四条违背
+将已经计算的找零数目储存，在递归中进行查询
+动态规划
+从1分找零开始，系统地计算到所需的找零金额
+是一种有比较的递推算法
+">
+    <meta name="generator" content="Hugo 0.152.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95.docx/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95.docx/">
+  <meta property="og:site_name" content="一个分享学习笔记的网站">
+  <meta property="og:title" content="一个分享学习笔记的网站">
+  <meta property="og:description" content="递归算法
+基本法则
+基准情形
+有某些基准的情形，不需要递归就能求解
+不断推进
+递归调用总能朝着产生基准情形的方向推进
+设计法则
+假设所有递归调用都能运行，不必知道簿记管理的细节
+合成效益法则
+求解一个问题的同一实例，切勿在不同递归调用做重复性工作
+书写方式（准确性待商榷）
+确定递归的基准情形（也即递推的尽头和回归的开始）
+将问题分解为低一规模问题（找到演进方式）
+假设函数能实现低一规模问题，调用函数解决高规模问题
+复杂的递归问题
+汉诺塔
+借助终点柱，将高度为height-1的一叠盘子移到中间柱子
+将最后一个盘子移到终点柱子
+借助起点柱子将高度为height-1的一叠盘子从中间柱子移到终点柱子
+探索迷宫
+DFS（深度优先）
+起始位置开始首先向北移动一格，在新位置递归重复
+第一步向北行不通，尝试向南移动一格，递归重复
+向南也行不通，就尝试向西移动一格，递归重复
+如果向北、南、西都不行，就尝试向东移动一格，递归重复
+四个方向都不行，意味没有出路
+（为避免陷入循环，已经探索过的位置不再探索）
+找零问题
+贪婪算法
+尽可能用面值大的硬币
+递归算法
+基准情形：找的零钱金额与硬币面值相同，只需要1枚硬币
+不断推进：减去1枚硬币后比较大小选择
+记忆化
+基础的递归算法有大量重复性计算与法则第四条违背
+将已经计算的找零数目储存，在递归中进行查询
+动态规划
+从1分找零开始，系统地计算到所需的找零金额
+是一种有比较的递推算法">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+
+  <meta itemprop="name" content="一个分享学习笔记的网站">
+  <meta itemprop="description" content="递归算法
+基本法则
+基准情形
+有某些基准的情形，不需要递归就能求解
+不断推进
+递归调用总能朝着产生基准情形的方向推进
+设计法则
+假设所有递归调用都能运行，不必知道簿记管理的细节
+合成效益法则
+求解一个问题的同一实例，切勿在不同递归调用做重复性工作
+书写方式（准确性待商榷）
+确定递归的基准情形（也即递推的尽头和回归的开始）
+将问题分解为低一规模问题（找到演进方式）
+假设函数能实现低一规模问题，调用函数解决高规模问题
+复杂的递归问题
+汉诺塔
+借助终点柱，将高度为height-1的一叠盘子移到中间柱子
+将最后一个盘子移到终点柱子
+借助起点柱子将高度为height-1的一叠盘子从中间柱子移到终点柱子
+探索迷宫
+DFS（深度优先）
+起始位置开始首先向北移动一格，在新位置递归重复
+第一步向北行不通，尝试向南移动一格，递归重复
+向南也行不通，就尝试向西移动一格，递归重复
+如果向北、南、西都不行，就尝试向东移动一格，递归重复
+四个方向都不行，意味没有出路
+（为避免陷入循环，已经探索过的位置不再探索）
+找零问题
+贪婪算法
+尽可能用面值大的硬币
+递归算法
+基准情形：找的零钱金额与硬币面值相同，只需要1枚硬币
+不断推进：减去1枚硬币后比较大小选择
+记忆化
+基础的递归算法有大量重复性计算与法则第四条违背
+将已经计算的找零数目储存，在递归中进行查询
+动态规划
+从1分找零开始，系统地计算到所需的找零金额
+是一种有比较的递推算法">
+  <meta itemprop="wordCount" content="39">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="一个分享学习笔记的网站">
+  <meta name="twitter:description" content="递归算法
+基本法则
+基准情形
+有某些基准的情形，不需要递归就能求解
+不断推进
+递归调用总能朝着产生基准情形的方向推进
+设计法则
+假设所有递归调用都能运行，不必知道簿记管理的细节
+合成效益法则
+求解一个问题的同一实例，切勿在不同递归调用做重复性工作
+书写方式（准确性待商榷）
+确定递归的基准情形（也即递推的尽头和回归的开始）
+将问题分解为低一规模问题（找到演进方式）
+假设函数能实现低一规模问题，调用函数解决高规模问题
+复杂的递归问题
+汉诺塔
+借助终点柱，将高度为height-1的一叠盘子移到中间柱子
+将最后一个盘子移到终点柱子
+借助起点柱子将高度为height-1的一叠盘子从中间柱子移到终点柱子
+探索迷宫
+DFS（深度优先）
+起始位置开始首先向北移动一格，在新位置递归重复
+第一步向北行不通，尝试向南移动一格，递归重复
+向南也行不通，就尝试向西移动一格，递归重复
+如果向北、南、西都不行，就尝试向东移动一格，递归重复
+四个方向都不行，意味没有出路
+（为避免陷入循环，已经探索过的位置不再探索）
+找零问题
+贪婪算法
+尽可能用面值大的硬币
+递归算法
+基准情形：找的零钱金额与硬币面值相同，只需要1枚硬币
+不断推进：减去1枚硬币后比较大小选择
+记忆化
+基础的递归算法有大量重复性计算与法则第四条违背
+将已经计算的找零数目储存，在递归中进行查询
+动态规划
+从1分找零开始，系统地计算到所需的找零金额
+是一种有比较的递推算法">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        一个分享学习笔记的网站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="首页 page">
+              首页
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="关于 page">
+              关于
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>递归算法</strong></p>
+<p><strong>基本法则</strong></p>
+<p><strong>基准情形</strong></p>
+<blockquote>
+<p>有某些基准的情形，不需要递归就能求解</p>
+<p><strong>不断推进</strong></p>
+<p>递归调用总能朝着产生基准情形的方向推进</p>
+<p><strong>设计法则</strong></p>
+<p>假设所有递归调用都能运行，不必知道簿记管理的细节</p>
+</blockquote>
+<p><strong>合成效益法则</strong></p>
+<blockquote>
+<p>求解一个问题的同一实例，切勿在不同递归调用做重复性工作</p>
+</blockquote>
+<p><strong>书写方式（准确性待商榷）</strong></p>
+<p>确定递归的基准情形（也即递推的尽头和回归的开始）</p>
+<p>将问题分解为低一规模问题（找到演进方式）</p>
+<p>假设函数能实现低一规模问题，调用函数解决高规模问题</p>
+<p><strong>复杂的递归问题</strong></p>
+<p><strong>汉诺塔</strong></p>
+<p>借助终点柱，将高度为height-1的一叠盘子移到中间柱子</p>
+<p>将最后一个盘子移到终点柱子</p>
+<p>借助起点柱子将高度为height-1的一叠盘子从中间柱子移到终点柱子</p>
+<blockquote>
+<p><strong>探索迷宫</strong></p>
+<p>DFS（深度优先）</p>
+<p>起始位置开始首先向北移动一格，在新位置递归重复</p>
+<p>第一步向北行不通，尝试向南移动一格，递归重复</p>
+<p>向南也行不通，就尝试向西移动一格，递归重复</p>
+<p>如果向北、南、西都不行，就尝试向东移动一格，递归重复</p>
+<p>四个方向都不行，意味没有出路</p>
+<p>（为避免陷入循环，已经探索过的位置不再探索）</p>
+</blockquote>
+<p><strong>找零问题</strong></p>
+<blockquote>
+<p>贪婪算法</p>
+<p>尽可能用面值大的硬币</p>
+<p>递归算法</p>
+<p>基准情形：找的零钱金额与硬币面值相同，只需要1枚硬币</p>
+<p>不断推进：减去1枚硬币后比较大小选择</p>
+<p>记忆化</p>
+<p>基础的递归算法有大量重复性计算与法则第四条违背</p>
+<p>将已经计算的找零数目储存，在递归中进行查询</p>
+<p>动态规划</p>
+<p>从1分找零开始，系统地计算到所需的找零金额</p>
+<p>是一种有比较的递推算法</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  一个分享学习笔记的网站 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

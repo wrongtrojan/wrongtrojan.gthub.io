@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>一个分享学习笔记的网站</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="列表、栈和队列
+抽象数据类型(abstract data type)
+
+ADT是一些操作的集合，可以有诸如并、交、测定大小、取余、查找等操作
+列表(List)ADT
+列表模型
+元素的集合，每一个元素有其相对位置
+支持操作 add() remove() search isEmpty() length() index()
+append() insert(pos,item) pop() pop(pos)
+列表的数组实现
+插入和删除的运行时间复杂度高，表的大小必须事先已知
+链表(linked list)（允许表不连续存储）
+链表的每个节点均含有数据域和指向后继节点的指针域（Next指针）
+最后一个节点的Next指针指向NULL（0）
+留出一个标志节点，称为表头(header)或哑结点(dummy node)
+Delete可以通过修改指向待删除节点指针，使之指向下一节点实现
+双链表(double linked list)（允许双向扫描链表）
+在链表节点结构上附加一个域，使节点包含指向上一个节点的指针
+增加了空间需求，使插入和删除的开销增加一倍，但简化了删除操作
+循环链表
+最后节点反过来直指第一个节点
+链表的应用
+基数排序(radix sort)
+栈(stack)ADT
+栈模型
+限制插入（进栈）和删除（出栈）只在栈顶进行的表，又称为FILO表
+支持操作 push() pop() peak()(返回栈顶） isEmpty() size()
+栈的链表实现
+操作指针的例程开销昂贵
+栈的数组实现
+栈的应用（反转特性）
+匹配括号
+进制转化
+前、中、后序表达式转化
+
+队列(queue)ADT
+
+队列模型
+在队尾(rear)插入（入队），在队头(front)删除（出队）的表，又称FIFO表
+支持操作 enqueue() dequeue() isEmpty() size()
+队列的数组实现
+通过循环数组(circular array)实现
+队列的应用
+模拟：约瑟夫问题
+模拟：打印任务
+
+双端队列(deque)ADT
+
+同时具备栈和队列的特性">
+    <meta name="generator" content="Hugo 0.152.2">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/%E8%A1%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97.docx/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/%E8%A1%A8%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97.docx/">
+  <meta property="og:site_name" content="一个分享学习笔记的网站">
+  <meta property="og:title" content="一个分享学习笔记的网站">
+  <meta property="og:description" content="列表、栈和队列
+抽象数据类型(abstract data type)
+ADT是一些操作的集合，可以有诸如并、交、测定大小、取余、查找等操作
+列表(List)ADT
+列表模型
+元素的集合，每一个元素有其相对位置
+支持操作 add() remove() search isEmpty() length() index()
+append() insert(pos,item) pop() pop(pos)
+列表的数组实现
+插入和删除的运行时间复杂度高，表的大小必须事先已知
+链表(linked list)（允许表不连续存储）
+链表的每个节点均含有数据域和指向后继节点的指针域（Next指针）
+最后一个节点的Next指针指向NULL（0）
+留出一个标志节点，称为表头(header)或哑结点(dummy node)
+Delete可以通过修改指向待删除节点指针，使之指向下一节点实现
+双链表(double linked list)（允许双向扫描链表）
+在链表节点结构上附加一个域，使节点包含指向上一个节点的指针
+增加了空间需求，使插入和删除的开销增加一倍，但简化了删除操作
+循环链表
+最后节点反过来直指第一个节点
+链表的应用
+基数排序(radix sort)
+栈(stack)ADT
+栈模型
+限制插入（进栈）和删除（出栈）只在栈顶进行的表，又称为FILO表
+支持操作 push() pop() peak()(返回栈顶） isEmpty() size()
+栈的链表实现
+操作指针的例程开销昂贵
+栈的数组实现
+栈的应用（反转特性）
+匹配括号
+进制转化
+前、中、后序表达式转化
+队列(queue)ADT
+队列模型
+在队尾(rear)插入（入队），在队头(front)删除（出队）的表，又称FIFO表
+支持操作 enqueue() dequeue() isEmpty() size()
+队列的数组实现
+通过循环数组(circular array)实现
+队列的应用
+模拟：约瑟夫问题
+模拟：打印任务
+双端队列(deque)ADT
+同时具备栈和队列的特性">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+
+  <meta itemprop="name" content="一个分享学习笔记的网站">
+  <meta itemprop="description" content="列表、栈和队列
+抽象数据类型(abstract data type)
+ADT是一些操作的集合，可以有诸如并、交、测定大小、取余、查找等操作
+列表(List)ADT
+列表模型
+元素的集合，每一个元素有其相对位置
+支持操作 add() remove() search isEmpty() length() index()
+append() insert(pos,item) pop() pop(pos)
+列表的数组实现
+插入和删除的运行时间复杂度高，表的大小必须事先已知
+链表(linked list)（允许表不连续存储）
+链表的每个节点均含有数据域和指向后继节点的指针域（Next指针）
+最后一个节点的Next指针指向NULL（0）
+留出一个标志节点，称为表头(header)或哑结点(dummy node)
+Delete可以通过修改指向待删除节点指针，使之指向下一节点实现
+双链表(double linked list)（允许双向扫描链表）
+在链表节点结构上附加一个域，使节点包含指向上一个节点的指针
+增加了空间需求，使插入和删除的开销增加一倍，但简化了删除操作
+循环链表
+最后节点反过来直指第一个节点
+链表的应用
+基数排序(radix sort)
+栈(stack)ADT
+栈模型
+限制插入（进栈）和删除（出栈）只在栈顶进行的表，又称为FILO表
+支持操作 push() pop() peak()(返回栈顶） isEmpty() size()
+栈的链表实现
+操作指针的例程开销昂贵
+栈的数组实现
+栈的应用（反转特性）
+匹配括号
+进制转化
+前、中、后序表达式转化
+队列(queue)ADT
+队列模型
+在队尾(rear)插入（入队），在队头(front)删除（出队）的表，又称FIFO表
+支持操作 enqueue() dequeue() isEmpty() size()
+队列的数组实现
+通过循环数组(circular array)实现
+队列的应用
+模拟：约瑟夫问题
+模拟：打印任务
+双端队列(deque)ADT
+同时具备栈和队列的特性">
+  <meta itemprop="wordCount" content="72">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="一个分享学习笔记的网站">
+  <meta name="twitter:description" content="列表、栈和队列
+抽象数据类型(abstract data type)
+ADT是一些操作的集合，可以有诸如并、交、测定大小、取余、查找等操作
+列表(List)ADT
+列表模型
+元素的集合，每一个元素有其相对位置
+支持操作 add() remove() search isEmpty() length() index()
+append() insert(pos,item) pop() pop(pos)
+列表的数组实现
+插入和删除的运行时间复杂度高，表的大小必须事先已知
+链表(linked list)（允许表不连续存储）
+链表的每个节点均含有数据域和指向后继节点的指针域（Next指针）
+最后一个节点的Next指针指向NULL（0）
+留出一个标志节点，称为表头(header)或哑结点(dummy node)
+Delete可以通过修改指向待删除节点指针，使之指向下一节点实现
+双链表(double linked list)（允许双向扫描链表）
+在链表节点结构上附加一个域，使节点包含指向上一个节点的指针
+增加了空间需求，使插入和删除的开销增加一倍，但简化了删除操作
+循环链表
+最后节点反过来直指第一个节点
+链表的应用
+基数排序(radix sort)
+栈(stack)ADT
+栈模型
+限制插入（进栈）和删除（出栈）只在栈顶进行的表，又称为FILO表
+支持操作 push() pop() peak()(返回栈顶） isEmpty() size()
+栈的链表实现
+操作指针的例程开销昂贵
+栈的数组实现
+栈的应用（反转特性）
+匹配括号
+进制转化
+前、中、后序表达式转化
+队列(queue)ADT
+队列模型
+在队尾(rear)插入（入队），在队头(front)删除（出队）的表，又称FIFO表
+支持操作 enqueue() dequeue() isEmpty() size()
+队列的数组实现
+通过循环数组(circular array)实现
+队列的应用
+模拟：约瑟夫问题
+模拟：打印任务
+双端队列(deque)ADT
+同时具备栈和队列的特性">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        一个分享学习笔记的网站
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/" title="首页 page">
+              首页
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/about/" title="关于 page">
+              关于
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p><strong>列表、栈和队列</strong></p>
+<p><strong>抽象数据类型(abstract data type)</strong></p>
+<blockquote>
+<p>ADT是一些操作的集合，可以有诸如并、交、测定大小、取余、查找等操作</p>
+<p><strong>列表(List)ADT</strong></p>
+<p><strong>列表模型</strong></p>
+<p>元素的集合，每一个元素有其相对位置</p>
+<p>支持操作 add() remove() search isEmpty() length() index()</p>
+<p>append() insert(pos,item) pop() pop(pos)</p>
+<p><strong>列表的数组实现</strong></p>
+<p>插入和删除的运行时间复杂度高，表的大小必须事先已知</p>
+<p><strong>链表(linked list)（允许表不连续存储）</strong></p>
+<p>链表的每个节点均含有数据域和指向后继节点的指针域（Next指针）</p>
+<p>最后一个节点的Next指针指向NULL（0）</p>
+<p>留出一个标志节点，称为表头(header)或哑结点(dummy node)</p>
+<p>Delete可以通过修改指向待删除节点指针，使之指向下一节点实现</p>
+<p><strong>双链表(double linked list)（允许双向扫描链表）</strong></p>
+<p>在链表节点结构上附加一个域，使节点包含指向上一个节点的指针</p>
+<p>增加了空间需求，使插入和删除的开销增加一倍，但简化了删除操作</p>
+<p><strong>循环链表</strong></p>
+<p>最后节点反过来直指第一个节点</p>
+<p><strong>链表的应用</strong></p>
+<p>基数排序(radix sort)</p>
+<p><strong>栈(stack)ADT</strong></p>
+<p><strong>栈模型</strong></p>
+<p>限制插入（进栈）和删除（出栈）只在栈顶进行的表，又称为FILO表</p>
+<p>支持操作 push() pop() peak()<del>(返回栈顶）</del> isEmpty() size()</p>
+<p><strong>栈的链表实现</strong></p>
+<p>操作指针的例程开销昂贵</p>
+<p><strong>栈的数组实现</strong></p>
+<p><strong>栈的应用（反转特性）</strong></p>
+<p>匹配括号</p>
+<p>进制转化</p>
+<p>前、中、后序表达式转化</p>
+</blockquote>
+<p><strong>队列(queue)ADT</strong></p>
+<blockquote>
+<p><strong>队列模型</strong></p>
+<p>在队尾(rear)插入（入队），在队头(front)删除（出队）的表，又称FIFO表</p>
+<p>支持操作 enqueue() dequeue() isEmpty() size()</p>
+<p><strong>队列的数组实现</strong></p>
+<p>通过循环数组(circular array)实现</p>
+<p><strong>队列的应用</strong></p>
+<p>模拟：约瑟夫问题</p>
+<p>模拟：打印任务</p>
+</blockquote>
+<p><strong>双端队列(deque)ADT</strong></p>
+<blockquote>
+<p>同时具备栈和队列的特性</p>
+<p><strong>双端队列的应用</strong></p>
+<p>回文检测器</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  一个分享学习笔记的网站 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

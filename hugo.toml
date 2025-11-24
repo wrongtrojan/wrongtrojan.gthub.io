@@ -11,6 +11,7 @@ theme = "ananke"
   # 分类页面相关设置
   taxonomyCloud = true
   showTaxonomyCount = true
+  home_number = 3
   
 
 # 仅启用分类（禁用标签）
